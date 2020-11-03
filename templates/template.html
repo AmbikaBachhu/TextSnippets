@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body style="margin-left: 28%">
+<form class="mx-5" enctype="multipart/form-data" action="{% url 'save' %}" method="POST">
+    {% csrf_token %}
+    <h2 style="color: brown">Text Snippet</h2>
+    <table>
+        <tr>
+            <th>
+        {{ detail }}
+            </th>
+        </tr>
+        <tr>
+            <th>
+        <input type="submit" class="" value="Save">
+            </th>
+        </tr>
+    </table>
+</form>
+{% for x in messages %}
+    <h3 style="text-align: center;color: crimson;font-size: 40px;font-family: cursive">
+    {{ x }}
+    </h3>
+{% endfor %}
+</body>
+</html>
